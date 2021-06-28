@@ -17,7 +17,8 @@ const buttons = {
     remove: get('remove'),
     previous: get('previous'),
     next: get('next'),
-    zoomIn: get('zoom-in')
+    zoomIn: get('zoom-in'),
+    zoomOut: get('zoom-out')
 }
 
 const buttonsFunctions = {
@@ -43,6 +44,10 @@ const buttonsFunctions = {
     zoomIn(){
         let zoom = String(imageView.style.zoom).replace('%','') || 100
         imageView.style.zoom = `${Number(zoom) + 10}%`
+    },
+    zoomOut(){
+        let zoom = String(imageView.style.zoom).replace('%','') || 100
+        imageView.style.zoom = `${Number(zoom) - 10}%`
     }
 }
 
