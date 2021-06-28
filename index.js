@@ -21,7 +21,9 @@ const buttons = {
     previous: get('previous'),
     next: get('next'),
     zoomIn: get('zoom-in'),
-    zoomOut: get('zoom-out')
+    zoomOut: get('zoom-out'),
+    play: get('play'),
+    pause: get('pause')
 }
 
 const buttonsFunctions = {
