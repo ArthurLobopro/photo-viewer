@@ -32,6 +32,14 @@ const buttonsFunctions = {
         // imageView.src = index === -1 ? "" : images[ index === 0 ? 0 : index  - 1  ] 
         // imageView.src = images.length === 0 ? "" : imageView.src
     },
+    previous(){
+        const index = images.indexOf(imagemAtual) - 1
+        attImage( index === -1 ? images.length - 1 : index)
+    },
+    next(){
+        const index = images.indexOf(imagemAtual) + 1
+        attImage( index === images.length ? 0 : index)
+    },
     }
 }
 
