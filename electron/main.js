@@ -5,7 +5,7 @@ require('./header/header-actions-main')
 
 function mainWindow() {
     const win = new BrowserWindow({
-        //icon: path.join(__dirname,"../assets/icon32.png"),
+        icon: path.join(__dirname,"../assets/icon.png"),
         frame: false,
         webPreferences:{
             nodeIntegration: true,
