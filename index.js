@@ -44,3 +44,15 @@ function attList() {
 
     })
 }
+
+const addFunctions = () => {
+    const btn_array = Object.entries(buttons)
+
+    btn_array.forEach( ([name,button]) => {
+        button.onclick = buttonsFunctions[name]
+    })
+} 
+
+addFunctions()
+
+photoInput.oninput = attList
