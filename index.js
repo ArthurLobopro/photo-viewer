@@ -40,6 +40,9 @@ const buttonsFunctions = {
         const index = images.indexOf(imagemAtual) + 1
         attImage( index === images.length ? 0 : index)
     },
+    zoomIn(){
+        let zoom = String(imageView.style.zoom).replace('%','') || 100
+        imageView.style.zoom = `${Number(zoom) + 10}%`
     }
 }
 
