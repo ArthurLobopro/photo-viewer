@@ -22,3 +22,25 @@ const buttonsFunctions = {
     }
 }
 
+function attList() {
+    const files = Array.from(photoInput.files)
+
+    files.forEach( file => {
+        const reader = new FileReader()
+        reader.readAsDataURL(file)
+
+        reader.onload = event => {
+            const img = event.target.result
+
+            if(atualImages.indexOf(img) === -1){
+                atualImages.push(img)
+            }
+
+            if(atualImages.length === 1){
+                imageView.src = atualImages[0]
+            }
+
+        }
+
+    })
+}
