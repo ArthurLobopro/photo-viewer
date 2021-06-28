@@ -29,8 +29,8 @@ const buttons = {
 }
 
 const buttonsFunctions = {
-    add: async () => {
-        const files = await ipcRenderer.invoke('add-files','teste').then( res => res)
+    async add(){
+        const files = await ipcRenderer.invoke('add-files')
         attList(files)
     },
     remove(){
