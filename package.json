@@ -35,7 +35,7 @@
     "forge": {
       "packagerConfig": {
         "name": "Visualizador de Fotos",
-        "icon": "build/icon.ico",
+        "icon": "build/icon",
         "ignore":[
           ".gitignore", "build"
         ]
