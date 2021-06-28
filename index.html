@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizador de Fotos</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" type="module"></script>
+</head>
+<body>
+    <div id="container">
+
+        <input type="file" id="photo-input" multiple accept="image/*">
+
+        <div id="img">
+            <img src="" id="image-view">
+        </div>
+
+        <div id="painel-wrapper">
+            <div id="painel">
+                <div class="icon-wrapper">
+                    <div class="icon" id="previous" title="Anterior">
+                        <img src="assets/button-icons/left-arrow.svg">
+                    </div>
+                    <div class="icon" id="next" title="Próxima">
+                        <img src="assets/button-icons/right-arrow.svg">
+                    </div>
+                </div>
+                <div class="icon-wrapper">
+                    <div class="icon" id="zoon-in">
+                        <img src="assets/button-icons/zoom-in.svg">
+                    </div>
+                    <div class="icon" id="zoon-out">
+                        <img src="assets/button-icons/zoom-out.svg">
+                    </div>
+                </div>
+                <div class="icon-wrapper">
+                    <div class="icon" id="add" title="Adicionar Fotos">
+                        <img src="assets/button-icons/add.svg">
+                    </div>
+                    <div class="icon" id="remove" title="Remover Imagem">
+                        <img src="assets/button-icons/remove.svg">
+                    </div>
+                </div>
+                <div class="icon-wrapper">
+                    <div class="icon" title="Iniciar Apresentação de Slides">
+                        <img src="assets/button-icons/play.svg">
+                    </div>
+                    <div class="icon" title="Configurações">
+                        <img src="assets/button-icons/config.svg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
