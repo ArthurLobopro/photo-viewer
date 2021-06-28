@@ -40,9 +40,7 @@ ipcMain.handle('add-files', async (event, arg) => {
     })
 })
 
-
-
 // Faz com que o programa não inicie várias vezes durante a instalação
-// if (require('electron-squirrel-startup')){
-//     return app.quit();
-// }
+if (require('electron-squirrel-startup')){
+    return app.quit();
+}
