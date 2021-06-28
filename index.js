@@ -53,6 +53,16 @@ const buttonsFunctions = {
     zoomOut(){
         let zoom = String(imageView.style.zoom).replace('%','') || 100
         imageView.style.zoom = `${Number(zoom) - 10}%`
+    },
+    play(){
+        interval = setInterval(() => buttonsFunctions.next(), 2000);
+        buttons.play.style.display = 'none'
+        buttons.pause.style.display = ''
+    },
+    pause(){
+        clearInterval(interval)
+        buttons.play.style.display = ''
+        buttons.pause.style.display = 'none'
     }
 }
 
