@@ -1,0 +1,23 @@
+{
+  "name": "photo-viewer",
+  "version": "1.0.0",
+  "description": "Visualizador de fotos simples",
+  "main": "./electron/main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArthurLobopro/photo-viewer.git"
+  },
+  "keywords": [],
+  "author": "Arthur Lobo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ArthurLobopro/photo-viewer/issues"
+  },
+  "homepage": "https://github.com/ArthurLobopro/photo-viewer#readme",
+  "dependencies": {
+    "electron": "^13.1.4"
+  }
+}
