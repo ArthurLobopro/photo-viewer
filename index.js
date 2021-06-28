@@ -1,3 +1,5 @@
+const { ipcRenderer } = require('electron')
+
 const get = id => document.getElementById(id)
 
 const photoInput = get('photo-input')
@@ -10,8 +12,8 @@ let imagemAtual
 let interval
 
 const attImage = (index) => {
-    imagemAtual = images[index]
-    imageView.src = imagemAtual ?? ""
+    imagemAtual = images[index] ?? ""
+    imageView.src = imagemAtual
     imageView.style.zoom = ""
 }
 
@@ -27,7 +29,10 @@ const buttons = {
 }
 
 const buttonsFunctions = {
-    add: () => photoInput.click(),
+    add: async () => {
+        const files = await ipcRenderer.invoke('add-files','teste').then( res => res)
+        attList(files)
+    },
     remove(){
         const src = imageView.src
         const index = images.indexOf(src)
@@ -64,25 +69,17 @@ const buttonsFunctions = {
     }
 }
 
-function attList() {
-    const files = Array.from(photoInput.files)
+function attList(files) {
 
     files.forEach( file => {
-        const reader = new FileReader()
-        reader.readAsDataURL(file)
-
-        reader.onload = event => {
-            const img = event.target.result
-
-            if(images.indexOf(img) === -1){
-                images.push(img)
+            
+            if(images.indexOf(file) === -1){
+                images.push(file)
             }
 
             if(images.length === 1){
                attImage(0)
             }
-
-        }
 
     })
 }
@@ -95,6 +92,8 @@ const addFunctions = () => {
     })
 } 
 
-addFunctions()
+
 
 photoInput.oninput = attList
+
+module.exports = addFunctions()
