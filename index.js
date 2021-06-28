@@ -7,6 +7,8 @@ const images = []
 
 let imagemAtual 
 
+let interval
+
 const attImage = (index) => {
     imagemAtual = images[index]
     imageView.src = imagemAtual ?? ""
