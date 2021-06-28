@@ -7,7 +7,10 @@ const atualImages = []
 
 const buttons = {
     add: get('add'),
-    remove: get('remove')
+    remove: get('remove'),
+    previous: get('previous'),
+    next: get('next'),
+    zoomIn: get('zoom-in')
 }
 
 const buttonsFunctions = {
