@@ -1,9 +1,12 @@
 const { app, BrowserWindow, ipcMain, dialog } = require('electron')
 const path = require('path')
 
+require('./header/header-actions-main')
+
 function mainWindow() {
     const win = new BrowserWindow({
         //icon: path.join(__dirname,"../assets/icon32.png"),
+        frame: false,
         webPreferences:{
             nodeIntegration: true,
             preload: path.join(__dirname, 'preload.js')
