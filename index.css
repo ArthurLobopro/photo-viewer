@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --fundo: #303030;
+    --fundo-hover: rgba(255 , 255 , 255, .08)
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+#photo-input{
+    display: none;
+}
+
+#container{
+    height: 100%;
+    display: grid;
+    grid-template-areas: 'img' 'painel';
+    grid-template-rows: calc(100% - 12rem) 12rem ;
+    background-color: var(--fundo);
+}
+
+#painel-wrapper{
+    grid-area: painel;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#img{
+    grid-area: img;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#image-view[src=""]{
+    display: none;
+}
+
+#painel{
+    background-color: #202020;
+    display: flex;
+    border-radius: 2rem;
+    padding: 0.3rem;
+}
+
+.icon-wrapper{
+    display: flex;
+    border-right: 1px solid #ccc;
+    align-items: center;
+    padding: 0 .5rem;
+}
+
+.icon-wrapper:last-child{
+    border-right: 0;
+}
+
+.icon{
+    padding: .5rem;
+    width: 3rem;
+    height: 3rem;
+    box-sizing: content-box;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 .5rem 0 0;
+}
+
+.icon:first-child{
+    margin-left: 0;
+}
+.icon:last-child{
+    margin-right: 0;
+}
+
+.icon:hover{
+    background-color: var(--fundo-hover);
+}
