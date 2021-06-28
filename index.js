@@ -31,9 +31,7 @@ const buttonsFunctions = {
     remove(){
         const src = imageView.src
         const index = images.indexOf(src)
-        console.log(images);
         images.splice(index,1)
-        console.log(images);
         attImage( index === -1 ? 0 : index )
         // imageView.src = index === -1 ? "" : images[ index === 0 ? 0 : index  - 1  ] 
         // imageView.src = images.length === 0 ? "" : imageView.src
@@ -75,7 +73,7 @@ function attList() {
 
         reader.onload = event => {
             const img = event.target.result
-            
+
             if(images.indexOf(img) === -1){
                 images.push(img)
             }
