@@ -3,7 +3,14 @@ const get = id => document.getElementById(id)
 const photoInput = get('photo-input')
 const imageView = get('image-view')
 
-const atualImages = []
+const images = []
+
+let imagemAtual 
+
+const attImage = (index) => {
+    imagemAtual = images[index]
+    imageView.src = imagemAtual ?? ""
+}
 
 const buttons = {
     add: get('add'),
@@ -34,13 +41,13 @@ function attList() {
 
         reader.onload = event => {
             const img = event.target.result
-
-            if(atualImages.indexOf(img) === -1){
-                atualImages.push(img)
+            
+            if(images.indexOf(img) === -1){
+                images.push(img)
             }
 
-            if(atualImages.length === 1){
-                imageView.src = atualImages[0]
+            if(images.length === 1){
+               attImage(0)
             }
 
         }
