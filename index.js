@@ -22,13 +22,16 @@ const buttons = {
 
 const buttonsFunctions = {
     add: () => photoInput.click(),
-    remove: () => {
+    remove(){
         const src = imageView.src
-        const index = atualImages.indexOf(src)
-        atualImages.splice(index,1)
-        console.table({index})
-        imageView.src = index === -1 ? "" : atualImages[ index === 0 ? 0 : index  - 1  ] 
-        imageView.src = atualImages.length === 0 ? "" : imageView.src
+        const index = images.indexOf(src)
+        console.log(images);
+        images.splice(index,1)
+        console.log(images);
+        attImage( index === -1 ? 0 : index )
+        // imageView.src = index === -1 ? "" : images[ index === 0 ? 0 : index  - 1  ] 
+        // imageView.src = images.length === 0 ? "" : imageView.src
+    },
     }
 }
 
