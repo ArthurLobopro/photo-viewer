@@ -1,5 +1,6 @@
 {
   "name": "photo-viewer",
+  "appname": "Visualizador de Fotos",
   "version": "1.0.0",
   "description": "Visualizador de fotos simples",
   "main": "./electron/main.js",
@@ -33,7 +34,11 @@
   "config": {
     "forge": {
       "packagerConfig": {
-        "icon": "build/icon.ico"
+        "name": "Visualizador de Fotos",
+        "icon": "build/icon.ico",
+        "ignore":[
+          ".gitignore", "build"
+        ]
       },
       "makers": [
         {
