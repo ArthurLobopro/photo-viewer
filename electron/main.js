@@ -30,6 +30,22 @@ app.on('activate', () => {
     }
 })
 
+ipcMain.on('request-arg', (event) => {
+    const args = process.argv
+    console.log(args);
+    const files = []
+    args.forEach( arg => {
+        const isPath = path.isAbsolute(arg)
+        const isImage = [
+            '.jpg', '.png', '.gif','.webp','.svg','.jpeg'
+        ].some( fmt => arg.indexOf(fmt) === (arg.length) - fmt.length )
+        if(isPath && isImage){
+            files.push(arg)
+        }
+    })
+    event.returnValue = files
+})
+
 ipcMain.handle('add-files', async (event, arg) => {
     return dialog.showOpenDialog({ 
         properties: ['openFile', 'multiSelections'],
