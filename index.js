@@ -1,9 +1,10 @@
-const { ipcRenderer } = require('electron')
-
 const get = id => document.getElementById(id)
 
-const photoInput = get('photo-input')
 const imageView = get('image-view')
+
+function getArgFiles() {
+    return ipcRenderer.sendSync('request-arg')
+}
 
 const images = []
 
@@ -38,8 +39,6 @@ const buttonsFunctions = {
         const index = images.indexOf(src)
         images.splice(index,1)
         attImage( index === -1 ? 0 : index )
-        // imageView.src = index === -1 ? "" : images[ index === 0 ? 0 : index  - 1  ] 
-        // imageView.src = images.length === 0 ? "" : imageView.src
     },
     previous(){
         const index = images.indexOf(imagemAtual) - 1
@@ -73,13 +72,13 @@ function attList(files) {
 
     files.forEach( file => {
             
-            if(images.indexOf(file) === -1){
-                images.push(file)
-            }
+        if(images.indexOf(file) === -1){
+            images.push(file)
+        }
 
-            if(images.length === 1){
-               attImage(0)
-            }
+        if(images.length === 1){
+            attImage(0)
+        }
 
     })
 }
@@ -92,8 +91,8 @@ const addFunctions = () => {
     })
 } 
 
-
-
-photoInput.oninput = attList
-
-module.exports = addFunctions()
+window.onload = () => {
+    addFunctions()
+    const files = getArgFiles()
+    files.forEach( img => images.push(img))
+}
