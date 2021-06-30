@@ -1,6 +1,5 @@
 {
   "name": "photo-viewer",
-  "appname": "Visualizador de Fotos",
   "version": "1.0.0",
   "description": "Visualizador de fotos simples",
   "main": "./electron/main.js",
@@ -34,7 +33,7 @@
   "config": {
     "forge": {
       "packagerConfig": {
-        "name": "Visualizador de Fotos",
+        "executableName":"photo-viewer",
         "icon": "build/icon",
         "ignore":[
           ".gitignore", "build"
@@ -44,7 +43,7 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "photo_viewer",
+            "name": "photo-viewer",
             "setupExe": "${name}-${version}-setup.exe",
             "setupIcon": "./build/icon.ico",
             "iconURL": "./build/icon.ico"
