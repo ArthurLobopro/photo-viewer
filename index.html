@@ -7,17 +7,16 @@
     <title>Visualizador de Fotos</title>
     <link rel="stylesheet" href="index.css">
     <link rel="icon" href="assets/icon.png">
+    <script src="index.js" defer></script>
 </head>
 <body>
     <div id="container">
-
-        <input type="file" id="photo-input" multiple accept="image/*">
 
         <div id="img">
             <img src="" id="image-view">
         </div>
 
-        <div id="painel-wrapper">
+        <div id="painel-wrapper" draggable="true">
             <div id="painel">
                 <div class="icon-wrapper">
                     <div class="icon" id="previous" title="Anterior">
@@ -47,11 +46,11 @@
                     <div class="icon" id="pause" style="display: none;" title="Pausar Apresentação de Slides">
                         <img src="assets/button-icons/pause.svg">
                     </div>
+                    <div class="icon" title="Configurações" style="display: none;">
+                        <img src="assets/button-icons/config.svg">
+                    </div>
                     <div class="icon" id="play" title="Iniciar Apresentação de Slides">
                         <img src="assets/button-icons/play.svg">
-                    </div>
-                    <div class="icon" title="Configurações">
-                        <img src="assets/button-icons/config.svg">
                     </div>
                 </div>
             </div>
