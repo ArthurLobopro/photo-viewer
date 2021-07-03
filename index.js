@@ -68,6 +68,11 @@ const buttonsFunctions = {
     }
 }
 
+const keyboardFunctions = {
+    ArrowRight: buttonsFunctions.next,
+    ArrowLeft: buttonsFunctions.previous
+}
+
 function attList(files) {
 
     files.forEach( file => {
@@ -98,4 +103,9 @@ window.onload = () => {
         files.forEach( img => images.push(img))
         attImage(0)
     }
+}
+
+window.onkeydown = event => {
+    const key = event.key
+    keyboardFunctions[key]?.()
 }
