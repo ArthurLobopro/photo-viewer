@@ -94,5 +94,8 @@ const addFunctions = () => {
 window.onload = () => {
     addFunctions()
     const files = getArgFiles()
-    files.forEach( img => images.push(img))
+    if(files.length > 0){
+        files.forEach( img => images.push(img))
+        attImage(0)
+    }
 }
