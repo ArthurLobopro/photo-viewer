@@ -70,7 +70,11 @@ const buttonsFunctions = {
 
 const keyboardFunctions = {
     ArrowRight: buttonsFunctions.next,
-    ArrowLeft: buttonsFunctions.previous
+    ArrowLeft: buttonsFunctions.previous,
+    "+": buttonsFunctions.add,
+    "-": buttonsFunctions.remove,
+    "ctrl+": buttonsFunctions.zoomIn,
+    "ctrl-": buttonsFunctions.zoomOut
 }
 
 function attList(files) {
@@ -106,6 +110,6 @@ window.onload = () => {
 }
 
 window.onkeydown = event => {
-    const key = event.key
+    const key = `${event.ctrlKey ? 'ctrl' : ''}${event.shiftKey ? "shift" : ''}${event.key}`
     keyboardFunctions[key]?.()
 }
