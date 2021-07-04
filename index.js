@@ -74,7 +74,12 @@ const keyboardFunctions = {
     "+": buttonsFunctions.add,
     "-": buttonsFunctions.remove,
     "ctrl+": buttonsFunctions.zoomIn,
-    "ctrl-": buttonsFunctions.zoomOut
+    "ctrl-": buttonsFunctions.zoomOut,
+    " ": () => {
+        const playIsVisible = buttons.play.style.display === ''
+
+        return playIsVisible ? buttonsFunctions.play() : buttonsFunctions.pause()
+    }
 }
 
 function attList(files) {
