@@ -34,6 +34,8 @@ const buttons = {
     next: get('next'),
     zoomIn: get('zoom-in'),
     zoomOut: get('zoom-out'),
+    rotateRight: get('rotate-right'),
+    rotateLeft: get('rotate-left'),
     play: get('play'),
     pause: get('pause')
 }
@@ -64,6 +66,16 @@ const buttonsFunctions = {
     zoomOut(){
         let zoom = String(imageView.style.zoom).replace('%','') || 100
         imageView.style.zoom = `${Number(zoom) - 10}%`
+    },
+    rotateLeft(){
+        let rotate = getAtualRotate()
+        rotate = rotate === -360 ? 0 : rotate
+        imageView.style.transform = `rotate(${ rotate - 90 }deg)`
+    },
+    rotateRight(){
+        let rotate = getAtualRotate()
+        rotate = rotate === 360 ? 0 : rotate
+        imageView.style.transform = `rotate(${ rotate + 90 }deg)`
     },
     play(){
         interval = setInterval(() => buttonsFunctions.next(), 2000);
