@@ -27,7 +27,7 @@ body{
     height: 100%;
     display: grid;
     grid-template-areas: 'img' 'painel';
-    grid-template-rows: calc(100% - 12rem) 12rem ;
+    grid-template-rows: calc(100% - 8rem) 8rem ;
     background-color: var(--fundo);
 }
 
