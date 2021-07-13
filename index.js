@@ -18,6 +18,15 @@ const attImage = (index) => {
     imageView.style.zoom = ""
 }
 
+const getAtualRotate = () => {
+    let atualRotateString = imageView.style.transform ?? "(0deg)"
+    const start = atualRotateString.indexOf('(') + 1
+    const end = atualRotateString.indexOf(')')
+    // console.log(atualRotateString.substring(start, end));
+    const atualRotate = Number( atualRotateString.substring(start, end).replace('deg','') )
+    return atualRotate ?? 0
+}
+
 const buttons = {
     add: get('add'),
     remove: get('remove'),
