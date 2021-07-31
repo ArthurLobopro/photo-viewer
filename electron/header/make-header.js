@@ -15,7 +15,7 @@ const make_header = () => {
             <img src="${path}minimize.svg" alt="Minimaze" title="Minimizar" id="minimize">
         </div>
         <div>
-            <img src="${path}expand.svg" alt="Maximize" title="Expandir" id="expand">
+            <img src="${path}square.svg" alt="Maximize" title="Expandir" id="expand">
         </div>
         <div>
             <img src="${path}close.svg" alt="Close" title="Fechar" id="close">
